@@ -3,6 +3,7 @@
 
 #include "./DataType/Pitch/Pitch.h"
 #include "../BaseballPlayer/BaseballPlayer.h"
+#include "../PitchSpace/PitchSpace.h"
 
 class Pitcher : public BaseballPlayer {
 
@@ -20,7 +21,7 @@ public:
     Pitcher(const Pitcher& player) : BaseballPlayer(static_cast<BaseballPlayer>(player))
     {}
 
-    Pitch pitch();
+    Pitch pitch(const PitchSpace& space);
 
 };
 

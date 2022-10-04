@@ -19,7 +19,11 @@ public:
     Grid position()
     {return pos;}
 
-    friend std::ostream& operator << (std::ostream& os, const Pitch& pitch);
+    friend std::ostream& operator << (std::ostream& os, const Pitch& pitch)
+    {
+        os << "pos:" << pitch.pos;
+        return os;
+    }
 };
 
 #endif // !PITCH_H

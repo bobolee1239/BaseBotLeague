@@ -15,7 +15,11 @@ public:
     Grid() : x(0), y(0)
     {}
 
-    friend std::ostream& operator << (std::ostream& os, const Grid& grid);
+    friend std::ostream& operator << (std::ostream& os, const Grid& grid)
+    {
+        os << "(" << grid.x << "," << grid.y << ")";
+        return os;
+    }
 };
 
 
