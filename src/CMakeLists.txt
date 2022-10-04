@@ -1,32 +1,16 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(BaseBotGameCPP )
-enable_language(CXX)
+project(BaseBotGame )
 
-set(LIB_SRC
-    Component/Pitcher/Pitcher.cpp
-    )
+set(FOLDER "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
-add_library(BaseballSim
-    ${LIB_SRC}
-    )
+message("INFO: Build Simulation Library")
+include(${FOLDER}/LibBaseballSim.cmake)
 
-target_include_directories(BaseballSim
-    PRIVATE
-    ${CMAKE_CURRENT_LIST_DIR}
-    )
+message("INFO: Build BaseBotGame Executable")
+include(${FOLDER}/BaseBotGame.cmake)
 
-add_executable(BaseBotGame
-    main.cpp
-    )
-
-target_compile_definitions(BaseBotGame
-    PRIVATE
-    -DENABLE_ERROR_LOG
-    -DENABLE_DEBUG_LOG
-    -DENABLE_INFORMATION_LOG
-    )
-
-target_link_libraries(BaseBotGame
-    BaseballSim
-    )
+if (${ENABLE_UT})
+    message("INFO: Build BaseBotGame Testing Suits")
+    include(${FOLDER}/BaseBotUt.cmake)
+endif()

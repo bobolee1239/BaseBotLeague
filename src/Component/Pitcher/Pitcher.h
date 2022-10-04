@@ -1,7 +1,7 @@
 #ifndef PITCHER_H
 #define PITCHER_H
 
-#include "./Pitch.h"
+#include "./DataType/Pitch/Pitch.h"
 #include "../BaseballPlayer/BaseballPlayer.h"
 
 class Pitcher : public BaseballPlayer {

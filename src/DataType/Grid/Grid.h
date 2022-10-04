@@ -1,6 +1,8 @@
 #ifndef GRID_H
 #define GRID_H
 
+#include <iostream>
+
 class Grid {
 public:
     int x;
@@ -12,6 +14,8 @@ public:
     {}
     Grid() : x(0), y(0)
     {}
+
+    friend std::ostream& operator << (std::ostream& os, const Grid& grid);
 };
 
 

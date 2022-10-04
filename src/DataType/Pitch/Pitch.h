@@ -1,6 +1,7 @@
 #ifndef PITCH_H
 #define PITCH_H
 
+#include <iostream>
 #include "./DataType/Grid/Grid.h"
 
 class Pitch {
@@ -12,6 +13,13 @@ public:
     {}
     Pitch() : pos()
     {}
+
+    Grid position() const 
+    {return pos;}
+    Grid position()
+    {return pos;}
+
+    friend std::ostream& operator << (std::ostream& os, const Pitch& pitch);
 };
 
 #endif // !PITCH_H
